@@ -7,6 +7,9 @@ on:
 
 jobs:
   sync:
+    # Syncs the upstream's production catalog and needs its secrets, which
+    # forks do not inherit; skip it everywhere except the upstream repo.
+    if: github.repository == 'MHaggis/Security-Detections-MCP'
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
